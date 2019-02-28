@@ -16,7 +16,7 @@
 		<table>
 			<tr><th>Name</th></tr>
 				<c:forEach var = "star" items = "${ list }">
-					<tr><td>${list.name}</td></tr>
+					<tr><td>${star.name}</td></tr>
 				</c:forEach>
 		</table>
 	</div>

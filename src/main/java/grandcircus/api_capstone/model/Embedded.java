@@ -1,18 +1,17 @@
 package grandcircus.api_capstone.model;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
+import java.util.List;
 
 public class Embedded {
 
-	@JsonProperty("events")
-	private EventsTm eventsTm;
+	private List<EventsTm> events;
 
-	public EventsTm getEventsTm() {
-		return eventsTm;
+	public List<EventsTm> getEvents() {
+		return events;
 	}
 
-	public void setEventsTm(EventsTm eventsTm) {
-		this.eventsTm = eventsTm;
+	public void setEvents(List<EventsTm> events) {
+		this.events = events;
 	}
 	
 }
