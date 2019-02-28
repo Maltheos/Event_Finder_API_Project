@@ -20,7 +20,7 @@ public class ApiService {
 	private String secretkey;
 	
 	public List<EventsTm> getAll(){
-		String url = "https://app.ticketmaster.com/discovery/v2/events.json?countryCode=US&apikey=" + apikey;
+		String url = "https://app.ticketmaster.com/discovery/v2/events.json?countryCode=US&page=0&size=100&apikey=" + apikey;
 		ApiResponse apiResponse = restTemplate.getForObject(url, ApiResponse.class);
 		return apiResponse.getEmbedded().getEvents();
 	}
