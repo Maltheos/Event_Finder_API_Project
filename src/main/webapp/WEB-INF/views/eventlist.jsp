@@ -14,9 +14,10 @@
 
 	<div class = "container">
 		<table>
-			<tr><th>Name</th></tr>
-				<c:forEach var = "star" items = "${ list }">
-					<tr><td>${star.name}</td></tr>
+			<tr><th>Name</th></tr><tr><th>Info</th></tr>
+				<c:forEach var = "variable" items = "${ list }">
+					<tr><td>${variable.name}</td></tr>
+					<tr><td>${variable.info}</td></tr>
 				</c:forEach>
 		</table>
 	</div>
