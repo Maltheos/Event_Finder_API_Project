@@ -12,7 +12,16 @@
 
 <body>
 <div class = "container">
-	<p>hi</p>
+
+<h1>Welcome to the events search API Capstone Project</h1>
+        
+        <form>
+            <div class="form-group">
+                <label for="keyword">Search by keyword:</label>
+                <input class= "form-control" name="keyword">
+            </div>
+        </form>
+
 </div>
 </body>
 

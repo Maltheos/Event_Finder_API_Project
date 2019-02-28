@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import grandcircus.api_capstone.dao.EventsDao;
@@ -26,7 +27,8 @@ public class EventsController {
 	}
 	
 	@RequestMapping("/eventlist")
-	public ModelAndView eventlist() {
+	public ModelAndView eventlist(
+			@RequestParam("keyword") String keyword) {
 		List<EventsTm> eventstm; 
 		eventstm = apiService.getAll();
 		ModelAndView mav = new ModelAndView("eventlist", "list", eventstm);

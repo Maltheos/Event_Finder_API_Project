@@ -24,4 +24,18 @@ public class ApiService {
 		ApiResponse apiResponse = restTemplate.getForObject(url, ApiResponse.class);
 		return apiResponse.getEmbedded().getEvents();
 	}
+	
+	
+	/*public String localDate getOneLocalDates() {
+		String url = "https://app.ticketmaster.com/discovery/v2/events.json?countryCode=US&page=0&size=100&apikey=" + apikey;
+		ApiResponse apiResponse = restTemplate.getForObject(url, ApiResponse.class);
+		return apiResponse.getEmbedded().getEvents().getDates().getStart().getLocalDate();
+	}
+	
+	public List<EventsTm> getByName(){
+		String url = "https://app.ticketmaster.com/discovery/v2/events.json?countryCode=US&page=0&size=100&apikey=" + apikey;
+		ApiResponse apiResponse = restTemplate.getForObject(url, ApiResponse.class);
+		return apiResponse.getEmbedded().getEvents();
+	}
+	*/
 }

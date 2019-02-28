@@ -14,10 +14,11 @@
 
 	<div class = "container">
 		<table>
-			<tr><th>Name</th></tr><tr><th>Info</th></tr>
+			<tr><th>Name</th><th>Info</th></tr>
 				<c:forEach var = "variable" items = "${ list }">
 					<tr><td>${variable.name}</td></tr>
 					<tr><td>${variable.info}</td></tr>
+					<tr><td>${variable.dates.start.localDate}</td></tr>
 				</c:forEach>
 		</table>
 	</div>

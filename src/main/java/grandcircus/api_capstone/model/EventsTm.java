@@ -3,9 +3,9 @@ package grandcircus.api_capstone.model;
 public class EventsTm {
 
 	private String name;
-	private String id;
+//	private String id;
 //	private String url;
-////	private Dates dates; to add later
+    private Dates dates;
 	private String info;
 //	private Prices priceRanges; to add later
 //	private Classifications classifcations; to add later
@@ -20,12 +20,20 @@ public class EventsTm {
 		this.name = name;
 	}
 	
-	public String getId() {
-		return id;
+	public Dates getDates() {
+		return dates;
 	}
-	public void setId(String id) {
-		this.id = id;
+
+	public void setDates(Dates dates) {
+		this.dates = dates;
 	}
+
+//	public String getId() {
+//		return id;
+//	}
+//	public void setId(String id) {
+//		this.id = id;
+//	}
 //	public String getUrl() {
 //		return url;
 //	}
