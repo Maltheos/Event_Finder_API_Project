@@ -25,6 +25,12 @@ public class ApiService {
 		return apiResponse.getEmbedded().getEvents();
 	}
 	
+	//find event by name
+	
+	// find event by date
+	
+	// find event by keyword
+	
 	
 	/*public String localDate getOneLocalDates() {
 		String url = "https://app.ticketmaster.com/discovery/v2/events.json?countryCode=US&page=0&size=100&apikey=" + apikey;

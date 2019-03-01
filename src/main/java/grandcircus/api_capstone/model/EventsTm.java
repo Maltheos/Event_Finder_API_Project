@@ -12,6 +12,10 @@ public class EventsTm {
 //	@JsonProperty("_embedded")
 //	private Embedded embedded; to add later
 
+	public EventsTm() {
+		
+	}
+	
 	public String getName() {
 		return name;
 	}

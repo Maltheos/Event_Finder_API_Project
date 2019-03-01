@@ -5,6 +5,9 @@ import java.util.List;
 public class Embedded {
 
 	private List<EventsTm> events;
+	
+	private SingleEvent();
+	
 
 	public List<EventsTm> getEvents() {
 		return events;
@@ -12,6 +15,10 @@ public class Embedded {
 
 	public void setEvents(List<EventsTm> events) {
 		this.events = events;
+	}
+	
+	public SingleEvent getSingleEvent() {
+		return singleEvent;
 	}
 	
 }
