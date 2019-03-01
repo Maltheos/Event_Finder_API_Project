@@ -15,10 +15,11 @@
 
 <h1>Welcome to the events search API Capstone Project</h1>
         
-        <form>
+        <form action = "/eventlist">
             <div class="form-group">
                 <label for="keyword">Search by keyword:</label>
                 <input class= "form-control" name="keyword">
+                <button> Search! </button>
             </div>
         </form>
 

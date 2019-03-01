@@ -19,7 +19,36 @@ public class ApiService {
 	@Value("${ticketmaster.secretkey}")
 	private String secretkey;
 	
+	//query parameter: "size = 100" -> size parameter is included in all of these.
 	public List<EventsTm> getAll(){
+		String url = "https://app.ticketmaster.com/discovery/v2/events.json?countryCode=US&page=0&size=100&apikey=" + apikey;
+		ApiResponse apiResponse = restTemplate.getForObject(url, ApiResponse.class);
+		return apiResponse.getEmbedded().getEvents();
+	}
+	
+	//query parameter: "id"
+	public List<EventsTm> getById(){
+		String url = "https://app.ticketmaster.com/discovery/v2/events.json?countryCode=US&page=0&size=100&apikey=" + apikey;
+		ApiResponse apiResponse = restTemplate.getForObject(url, ApiResponse.class);
+		return apiResponse.getEmbedded().getEvents();
+	}
+	
+	//query parameter: "url"
+	public List<EventsTm> getByURL(){
+		String url = "https://app.ticketmaster.com/discovery/v2/events.json?countryCode=US&page=0&size=100&apikey=" + apikey;
+		ApiResponse apiResponse = restTemplate.getForObject(url, ApiResponse.class);
+		return apiResponse.getEmbedded().getEvents();
+	}
+	
+	//query parameter: "keyword"
+	public List<EventsTm> filterByKeyword(String keyword){
+		String url = "https://app.ticketmaster.com/discovery/v2/events.json?keyword=" + keyword + "&countryCode=US&page=0&size=100&apikey=" + apikey;
+		ApiResponse apiResponse = restTemplate.getForObject(url, ApiResponse.class);
+		return apiResponse.getEmbedded().getEvents();
+	}
+	
+	//query parameter: "startDateTime"
+	public List<EventsTm> filterByStartDateTime(){
 		String url = "https://app.ticketmaster.com/discovery/v2/events.json?countryCode=US&page=0&size=100&apikey=" + apikey;
 		ApiResponse apiResponse = restTemplate.getForObject(url, ApiResponse.class);
 		return apiResponse.getEmbedded().getEvents();
@@ -32,16 +61,5 @@ public class ApiService {
 	// find event by keyword
 	
 	
-	/*public String localDate getOneLocalDates() {
-		String url = "https://app.ticketmaster.com/discovery/v2/events.json?countryCode=US&page=0&size=100&apikey=" + apikey;
-		ApiResponse apiResponse = restTemplate.getForObject(url, ApiResponse.class);
-		return apiResponse.getEmbedded().getEvents().getDates().getStart().getLocalDate();
-	}
 	
-	public List<EventsTm> getByName(){
-		String url = "https://app.ticketmaster.com/discovery/v2/events.json?countryCode=US&page=0&size=100&apikey=" + apikey;
-		ApiResponse apiResponse = restTemplate.getForObject(url, ApiResponse.class);
-		return apiResponse.getEmbedded().getEvents();
-	}
-	*/
 }

@@ -30,7 +30,7 @@ public class EventsController {
 	public ModelAndView eventlist(
 			@RequestParam("keyword") String keyword) {
 		List<EventsTm> eventstm; 
-		eventstm = apiService.getAll();
+		eventstm = apiService.filterByKeyword(keyword);
 		ModelAndView mav = new ModelAndView("eventlist", "list", eventstm);
 		return mav;
 	}
