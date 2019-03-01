@@ -5,7 +5,7 @@ public class EventsTm {
 	private String name;
 	private String id;
 	private String url;
-    private Dates dates;
+    private Sales sales;
 	private String info;
 //	private Prices priceRanges; to add later
 //	private Classifications classifications; to add later
@@ -22,12 +22,12 @@ public class EventsTm {
 		this.name = name;
 	}
 	
-	public Dates getDates() {
-		return dates;
+	public Sales getSales() {
+		return sales;
 	}
 
-	public void setDates(Dates dates) {
-		this.dates = dates;
+	public void setSales(Sales sales) {
+		this.sales = sales;
 	}
 
 	public String getId() {

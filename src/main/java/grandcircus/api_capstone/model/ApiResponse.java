@@ -6,7 +6,6 @@ public class ApiResponse {
 
 	@JsonProperty("_embedded")
 	private Embedded embedded;
-	private String keyword;
 
 	public Embedded getEmbedded() {
 		return embedded;
@@ -16,12 +15,6 @@ public class ApiResponse {
 		this.embedded = embedded;
 	}
 	
-	public String getKeyword() {
-		return keyword;
-	}
 
-	public void setKeyword(String keyword) {
-		this.keyword = keyword;
-	}
 	
 }

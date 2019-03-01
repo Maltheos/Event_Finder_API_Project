@@ -28,9 +28,36 @@ public class EventsController {
 	
 	@RequestMapping("/eventlist")
 	public ModelAndView eventlist(
-			@RequestParam("keyword") String keyword) {
+			@RequestParam(name = "keyword", required=false) String keyword,
+			@RequestParam(name = "id", required=false) String id,
+			@RequestParam(name = "startDateTime", required=false) String startDateTime)
+		{
 		List<EventsTm> eventstm; 
-		eventstm = apiService.filterByKeyword(keyword);
+		if (!keyword.isEmpty()) {
+			eventstm = apiService.filterByKeyword(keyword);	
+			System.out.println("filterByKeyword");
+		} else if (!id.isEmpty()) {
+			eventstm = apiService.getById(id);
+			System.out.println("getById");
+		} else if (!startDateTime.isEmpty()) {
+			System.out.println("You got here");
+			eventstm = apiService.getByStartDateTime(startDateTime);
+			System.out.println("getByDateTime");
+		} else {
+			eventstm = apiService.getAll();
+			System.out.println("getAll");
+		}
+		
+//		if (!startDateTime.isEmpty()) {
+//			System.out.println("You got here");
+//			eventstm = apiService.getByStartDateTime(startDateTime);
+//			System.out.println("getByDateTime");
+//		} else {
+//			eventstm = apiService.getAll();
+//			System.out.println("getAll");
+//		}
+		
+		
 		ModelAndView mav = new ModelAndView("eventlist", "list", eventstm);
 		return mav;
 	}

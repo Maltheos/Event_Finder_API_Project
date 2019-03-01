@@ -27,15 +27,15 @@ public class ApiService {
 	}
 	
 	//query parameter: "id"
-	public List<EventsTm> getById(){
-		String url = "https://app.ticketmaster.com/discovery/v2/events.json?countryCode=US&page=0&size=100&apikey=" + apikey;
+	public List<EventsTm> getById(String id){
+		String url = "https://app.ticketmaster.com/discovery/v2/events.json?id=" + id + "&countryCode=US&page=0&size=100&apikey=" + apikey;
 		ApiResponse apiResponse = restTemplate.getForObject(url, ApiResponse.class);
 		return apiResponse.getEmbedded().getEvents();
 	}
 	
 	//query parameter: "url"
-	public List<EventsTm> getByURL(){
-		String url = "https://app.ticketmaster.com/discovery/v2/events.json?countryCode=US&page=0&size=100&apikey=" + apikey;
+	public List<EventsTm> getByUrl(String urlQuery){
+		String url = "https://app.ticketmaster.com/discovery/v2/events.json?url=" + urlQuery + "&countryCode=US&page=0&size=100&apikey=" + apikey;
 		ApiResponse apiResponse = restTemplate.getForObject(url, ApiResponse.class);
 		return apiResponse.getEmbedded().getEvents();
 	}
@@ -48,8 +48,8 @@ public class ApiService {
 	}
 	
 	//query parameter: "startDateTime"
-	public List<EventsTm> filterByStartDateTime(){
-		String url = "https://app.ticketmaster.com/discovery/v2/events.json?countryCode=US&page=0&size=100&apikey=" + apikey;
+	public List<EventsTm> getByStartDateTime(String startDateTime){
+		String url = "https://app.ticketmaster.com/discovery/v2/events.json?startDateTime=" + startDateTime + "T00:00:00Z&countryCode=US&page=0&size=100&apikey=" + apikey;
 		ApiResponse apiResponse = restTemplate.getForObject(url, ApiResponse.class);
 		return apiResponse.getEmbedded().getEvents();
 	}

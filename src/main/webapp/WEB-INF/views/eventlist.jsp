@@ -17,7 +17,7 @@
 			<tr><th>Results</th></tr>
 				<c:forEach var = "variable" items = "${ list }">
 					<tr><td><u>Event Name</u>: ${variable.name}</td></tr>
-					<tr><td><u>Event Start Date</u>: ${variable.dates.start.localDate}</td></tr>
+					<tr><td><u>Event Start Date</u>: ${variable.sales.publicSales.startDateTime}</td></tr>
 					<tr><td><u>Event Description</u>: ${variable.info}</td></tr>
 					<tr><td><u>Event ID</u>: ${variable.id}</td></tr>
 					<tr><td><u>Event URL</u>: ${variable.url}</td></tr>
