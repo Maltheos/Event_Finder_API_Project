@@ -24,4 +24,9 @@ public class ApiService {
 		ApiResponse apiResponse = restTemplate.getForObject(url, ApiResponse.class);
 		return apiResponse.getEmbedded().getEvents();
 	}
+	
+	
 }
+
+
+
