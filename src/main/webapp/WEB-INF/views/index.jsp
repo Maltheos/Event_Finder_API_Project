@@ -12,7 +12,25 @@
 
 <body>
 <div class = "container">
-	<p>hi</p>
+
+<h1>Welcome to the events search API Capstone Project</h1>
+        
+        <form action = "/eventlist">
+            <div class="form-group">
+                <label for="keyword">Search by keyword:</label>
+                <input class= "form-control" name="keyword">
+            </div>
+             <div class="form-group">
+                <label for="id">Search by id:</label>
+                <input class= "form-control" name="id">
+            </div> 
+            <div class="form-group">
+                <label for="start date">Search by start date:</label>
+                <input class= "form-control" name="startDateTime">
+            </div>
+            <button action = "submit"> Search! </button>
+        </form>
+
 </div>
 </body>
 

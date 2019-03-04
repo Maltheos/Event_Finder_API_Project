@@ -5,7 +5,7 @@ import java.util.List;
 public class Embedded {
 
 	private List<EventsTm> events;
-
+	
 	public List<EventsTm> getEvents() {
 		return events;
 	}
