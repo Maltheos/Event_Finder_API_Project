@@ -61,5 +61,12 @@ public class EventsController {
 		ModelAndView mav = new ModelAndView("eventlist", "list", eventstm);
 		return mav;
 	}
-		
+	
+	@RequestMapping("/eventdetail")
+	public ModelAndView eventdetail( 
+		@RequestParam(name = "id", required = false) String id) {
+		List<EventsTm> eventstm;
+		eventstm = apiService.getById(id);
+		return new ModelAndView("eventdetail","event", eventstm);
+	}	
 }

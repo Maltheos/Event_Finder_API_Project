@@ -13,6 +13,8 @@ import grandcircus.api_capstone.model.EventsTm;
 public class ApiService {
 
 	private RestTemplate restTemplate = new RestTemplate();
+
+	// api key values stored in application.properties
 	@Value("${ticketmaster.apikey}")
 	private String apikey;
 	
@@ -26,7 +28,7 @@ public class ApiService {
 		return apiResponse.getEmbedded().getEvents();
 	}
 	
-	//query parameter: "id"
+	//query parameter: "id" - works but only if string id is exact match
 	public List<EventsTm> getById(String id){
 		String url = "https://app.ticketmaster.com/discovery/v2/events.json?id=" + id + "&countryCode=US&page=0&size=100&apikey=" + apikey;
 		ApiResponse apiResponse = restTemplate.getForObject(url, ApiResponse.class);
